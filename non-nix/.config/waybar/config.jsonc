@@ -1,0 +1,436 @@
+
+// 
+//      $$\      $$\                     $$\                           
+//      $$ | $\  $$ |                    $$ |                          
+//      $$ |$$$\ $$ | $$$$$$\  $$\   $$\ $$$$$$$\   $$$$$$\   $$$$$$\  
+//      $$ $$ $$\$$ | \____$$\ $$ |  $$ |$$  __$$\  \____$$\ $$  __$$\ 
+//      $$$$  _$$$$ | $$$$$$$ |$$ |  $$ |$$ |  $$ | $$$$$$$ |$$ |  \__|
+//      $$$  / \$$$ |$$  __$$ |$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |      
+//      $$  /   \$$ |\$$$$$$$ |\$$$$$$$ |$$$$$$$  |\$$$$$$$ |$$ |      
+//      \__/     \__| \_______| \____$$ |\_______/  \_______|\__|      
+//                             $$\   $$ |                              
+//                             \$$$$$$  |                              
+//                              \______/                               
+// 
+//      by Eblanyrt (2025)
+// 
+
+{
+
+    "layer": "top", // Waybar at top layer
+    "height": 37, // Waybar height (to be removed for auto height)
+    "width": 1885, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/notification",
+        "mpris"
+        
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "custom/cava",
+	    "tray", 
+        // "network",
+        "backlight",
+        "battery",
+        "clock"
+    ],
+
+   // Modules configuration
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} {title}",
+        "max-length": 45,
+        "player-icons": {
+            "default": "⏸",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "▶"
+        }
+	// "ignored-players": ["firefox"]
+    },
+
+    // "mpd": {
+    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    //     "format-disconnected": "Disconnected ",
+    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //     "interval": 10,
+    //     "consume-icons": {
+    //         "on": " " // Icon shows only when "consume" is on
+    //     },
+    //     "random-icons": {
+    //         "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+    //         "on": " "
+    //     },
+    //     "repeat-icons": {
+    //         "on": " "
+    //     },
+    //     "single-icons": {
+    //         "on": "1 "
+    //     },
+    //     "state-icons": {
+    //         "paused": "",
+    //         "playing": ""
+    //     },
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)"
+    // },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    // "cava": {
+    //     // "cava_config": "/home/mamat/cava/config",
+    //     "framerate": 60,
+    //     "autosens": 1,
+    //     "sensitivity": 100,
+    //     "bars": 14,
+    //     "lower_cutoff_freq": 50,
+    //     "higher_cutoff_freq": 10000,
+    //     "method": "pulse",
+    //     "source": "auto",
+    //     "stereo": true,
+    //     "reverse": false,
+    //     "bar_delimiter": 0,
+    //     "monstercat": false,
+    //     "waves": false,
+    //     "noise_reduction": 0.1,
+    //     "input_delay": 2,
+    //     "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    //     "actions": {
+    //                "on-click-right": "mode"
+    //                }
+    // },
+
+    "cava#left": {
+      "autosens": 1,
+      "bar_delimiter": 0,
+      "bars": 18,
+      "format-icons": [
+        "<span foreground='#cba6f7'>▁</span>",
+        "<span foreground='#cba6f7'>▂</span>",
+        "<span foreground='#cba6f7'>▃</span>",
+        "<span foreground='#cba6f7'>▄</span>",
+        "<span foreground='#89b4fa'>▅</span>",
+        "<span foreground='#89b4fa'>▆</span>",
+        "<span foreground='#89b4fa'>▇</span>",
+        "<span foreground='#89b4fa'>█</span>"
+      ],
+      "framerate": 60,
+      "higher_cutoff_freq": 10000,
+      "input_delay": 2,
+      "lower_cutoff_freq": 50,
+      "method": "pipewire",
+      "monstercat": false,
+      "reverse": false,
+      "source": "auto",
+      "stereo": true,
+      "waves": false
+    },
+
+    // "cava#right": {
+    //   "autosens": 1,
+    //   "bar_delimiter": 0,
+    //   "bars": 18,
+    //   "format-icons": [
+    //     "<span foreground='#cba6f7'>▁</span>",
+    //     "<span foreground='#cba6f7'>▂</span>",
+    //     "<span foreground='#cba6f7'>▃</span>",
+    //     "<span foreground='#cba6f7'>▄</span>",
+    //     "<span foreground='#89b4fa'>▅</span>",
+    //     "<span foreground='#89b4fa'>▆</span>",
+    //     "<span foreground='#89b4fa'>▇</span>",
+    //     "<span foreground='#89b4fa'>█</span>"
+    //   ],
+    //   "framerate": 60,
+    //   "higher_cutoff_freq": 10000,
+    //   "input_delay": 2,
+    //   "lower_cutoff_freq": 50,
+    //   "method": "pulse",
+    //   "monstercat": false,
+    //   "reverse": false,
+    //   "source": "auto",
+    //   "stereo": true,
+    //   "waves": false
+    // },
+
+    "cava#right": {
+      "autosens": 1,
+      "bar_delimiter": 0,
+      "bars": 18,
+      "format-icons": [
+        "<span foreground='#cba6f7'>▁</span>",
+        "<span foreground='#cba6f7'>▂</span>",
+        "<span foreground='#cba6f7'>▃</span>",
+        "<span foreground='#cba6f7'>▄</span>",
+        "<span foreground='#89b4fa'>▅</span>",
+        "<span foreground='#89b4fa'>▆</span>",
+        "<span foreground='#89b4fa'>▇</span>",
+        "<span foreground='#89b4fa'>█</span>"
+      ],
+      "framerate": 60,
+      "higher_cutoff_freq": 10000,
+      "input_delay": 2,
+      "lower_cutoff_freq": 50,
+      "monstercat": false,
+      "reverse": false,
+      "source": "auto",
+      "method": "pipewire"
+    //   "raw_target": "/dev/stdout",
+    //   "data_format": "ascii",
+    //   "ascii_max_range": 7
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "{}% "
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "scroll-step": 5,
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+	"on-click-right": "rofi-wifi-menu.sh"	
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        // "format": "{volume}% {icon} {format_source}",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "  MUTED",
+        "format-muted": "  MUTED",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    },
+
+    // Hyprland Modules
+
+    // "hyprland/workspaces": {
+    //     "format": "{name} {icon}",
+    //     "format-icons": {
+    //         // "1": "",
+    //         // "2": "",
+    //         // "3": "",
+    //         // "4": "",
+    //         // "5": "",
+    //         "active": "",
+    //         "default": ""
+    //     },
+    //     // "persistent-workspaces": {
+    //     //        "*": 10 // 5 workspaces by default on every monitor
+    //     //     "HDMI-A-1": 3 // but only three on HDMI-A-1
+    //     // }
+    // },
+
+    "hyprland/workspaces": {
+      "active-only": false,
+      "all-outputs": false,
+      "disable-scroll": false,
+    //   "format": "{name}",
+      "format": " ",
+      "format-icons": {
+        "active": "",
+        "default": "",
+        "sort-by-number": true,
+        "urgent": ""
+      },
+
+      "on-click": "activate",
+      "on-scroll-down": "hyprctl dispatch workspace e+1",
+      "on-scroll-up": "hyprctl dispatch workspace e-1",
+
+      "persistent-workspaces": {
+        "1": [], // Always show a workspace with name '1', on all outputs if it does not exists
+        "2": [], // Always show a workspace with name '2', on all outputs if it does not exists
+        "3": [] // Always show a workspace with name '3', on all outputs if it does not exists
+    }
+    },
+
+    // Custom Modules
+
+    "custom/launcher":{
+        "format": "❄",
+        "on-click": "~/.config/scripts/select-wallpaper.sh"
+    },
+
+    "custom/cava": {
+	"exec": "~/.config/waybar/cava.sh"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+          "notification": " <span foreground='red'><sup></sup></span>",
+          "none": " ",
+          "dnd-notification": " <span foreground='red'><sup></sup></span>",
+          "dnd-none": " ",
+          "inhibited-notification": " <span foreground='red'><sup></sup></span>",
+          "inhibited-none": " ",
+          "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
+          "dnd-inhibited-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+      }
+
+}

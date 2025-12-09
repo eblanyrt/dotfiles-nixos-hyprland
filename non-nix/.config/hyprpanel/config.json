@@ -1,0 +1,140 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "menus.power.showLabel": true,
+  "theme.bar.buttons.modules.cava.enableBorder": false,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "media"
+      ],
+      "middle": [
+        "cava",
+        "workspaces",
+        "cava"
+      ],
+      "right": [
+        "volume",
+        "bluetooth",
+        "network",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "media"
+      ],
+      "middle": [
+        "workspaces"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    },
+    "3": {
+      "left": [
+        "dashboard",
+        "media"
+      ],
+      "middle": [
+        "workspaces"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.location": "top",
+  "theme.bar.buttons.enableBorders": true,
+  "theme.bar.border.location": "none",
+  "theme.bar.buttons.volume.enableBorder": false,
+  "theme.bar.buttons.battery.enableBorder": false,
+  "bar.battery.label": true,
+  "bar.battery.hideLabelWhenFull": false,
+  "bar.media.format": "{title}",
+  "wallpaper.pywal": false,
+  "wallpaper.image": "/home/mamat/Pictures/Wallpapers/ningguang_smoke.jpg",
+  "wallpaper.enable": true,
+  "theme.bar.menus.monochrome": false,
+  "theme.matugen": true,
+  "theme.matugen_settings.mode": "dark",
+  "theme.matugen_settings.scheme_type": "tonal-spot",
+  "theme.matugen_settings.variation": "standard_1",
+  "theme.bar.buttons.style": "default",
+  "theme.bar.opacity": 100,
+  "bar.clock.format": "%H:%M",
+  "bar.media.show_active_only": true,
+  "bar.volume.scrollUp": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+  "bar.volume.scrollDown": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+  "bar.workspaces.workspaces": 5,
+  "bar.systray.ignore": [
+    "nm-applet"
+  ],
+  "menus.clock.weather.unit": "metric",
+  "menus.clock.time.military": true,
+  "menus.clock.weather.location": "Los Angeles",
+  "menus.clock.weather.key": "ed155eaa876744aea4c134351250806",
+  "menus.clock.weather.interval": 60000,
+  "bar.windowtitle.truncation_size": 50,
+  "menus.volume.raiseMaximumVolume": true,
+  "bar.customModules.cava.icon": "",
+  "bar.customModules.cava.bars": 9,
+  "bar.customModules.cava.showIcon": false,
+  "theme.bar.buttons.modules.worldclock.enableBorder": false,
+  "bar.clock.icon": "󰸗",
+  "bar.clock.showIcon": false,
+  "bar.clock.showTime": true,
+  "theme.bar.buttons.clock.spacing": "0.5em",
+  "theme.bar.transparent": true,
+  "theme.osd.orientation": "vertical",
+  "theme.osd.location": "right",
+  "bar.workspaces.applicationIconFallback": "󰣆",
+  "bar.network.showWifiInfo": true,
+  "bar.network.truncation": true,
+  "theme.bar.buttons.network.spacing": "0.5em",
+  "theme.font.size": "1.11rem",
+  "theme.font.name": "Ubuntu Nerd Font",
+  "theme.font.label": "JetBrainsMono Nerd Font Propo Bold",
+  "theme.font.weight": 600,
+  "menus.dashboard.powermenu.avatar.image": "/home/mamat/Downloads/Layla_Icon.png",
+  "menus.dashboard.powermenu.avatar.name": "Layla",
+  "bar.launcher.icon": "󰣇",
+  "theme.bar.buttons.borderSize": "0.05em",
+  "bar.workspaces.numbered_active_indicator": "underline",
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.workspaceMask": false,
+  "theme.bar.buttons.workspaces.pill.active_width": "10em",
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "theme.bar.buttons.network.enableBorder": false,
+  "bar.launcher.autoDetectIcon": true,
+  "theme.bar.buttons.separator.width": "0.1em",
+  "theme.bar.buttons.separator.margins": "0.15em",
+  "theme.bar.floating": false,
+  "bar.autoHide": "never",
+  "bar.media.show_label": true,
+  "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
+  "menus.dashboard.directories.left.directory1.command": "bash -c \"thunar $HOME/Downloads/\"",
+  "menus.dashboard.directories.left.directory2.command": "bash -c \"thunar $HOME/Videos/\"",
+  "menus.dashboard.directories.left.directory3.command": "bash -c \"thunar $HOME/Projects/\"",
+  "menus.dashboard.directories.right.directory1.command": "bash -c \"thunar $HOME/Documents/\"",
+  "menus.dashboard.directories.right.directory2.command": "bash -c \"thunar $HOME/Pictures/\"",
+  "menus.dashboard.directories.right.directory3.command": "bash -c \"thunar $HOME/\"",
+  "bar.bluetooth.label": false
+}

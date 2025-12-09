@@ -1,0 +1,33 @@
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+  };
+
+  # --- PERUBAHAN UTAMA DI SINI ---
+  # Menggunakan struktur fungsi yang benar, yang menerima 'self' dan semua input.
+  outputs = { self, nixpkgs, hyprpanel }: {
+
+    # 1. Kita definisikan overlay secara manual
+    overlays.default = final: prev: {
+      # Menambahkan paket 'hyprpanel' ke dalam set paket (pkgs)
+      hyprpanel = hyprpanel.packages.${prev.system}.default;
+    };
+
+    # 2. Kita definisikan konfigurasi sistem untuk hostname "mamat"
+    nixosConfigurations."mamat" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux"; # Sesuaikan jika arsitektur Anda berbeda
+
+      # Tidak perlu specialArgs untuk kasus sederhana ini
+      specialArgs = { };
+
+      modules = [
+        # 3. Terapkan overlay yang kita buat di atas ke sistem
+        { nixpkgs.overlays = [ self.overlays.default ]; }
+
+        # 4. (PENTING) Impor file konfigurasi utama Anda
+        ./configuration.nix
+      ];
+    };
+  };
+}
